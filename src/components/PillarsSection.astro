@@ -1,0 +1,90 @@
+---
+const pillars = [
+  {
+    title: "Biomarker Intelligence",
+    description: "See exactly what's happening inside your body. 160+ markers tested, 55 key biomarkers analyzed. No guesswork, just data that drives every decision.",
+    color: "#22C55E",
+    icon: "beaker"
+  },
+  {
+    title: "Nutrition Architecture",
+    description: "A flexible eating system that fits your travel schedule and lifestyle. No rigid meal plans - real strategies you can actually follow.",
+    color: "#F97316",
+    icon: "utensils"
+  },
+  {
+    title: "Training & Performance",
+    description: "Efficient workouts you can do anywhere. Programmed by coaches with 20+ years experience. No hours in the gym required.",
+    color: "#3B82F6",
+    icon: "dumbbell"
+  },
+  {
+    title: "Sleep & Recovery",
+    description: "Track HRV, sleep quality, and strain to know when to push and when to rest. Your wearable data syncs directly to your dashboard.",
+    color: "#A855F7",
+    icon: "moon"
+  },
+  {
+    title: "Coaching & Accountability",
+    description: "Unlimited access to our team. We answer questions, we hold you accountable. Weekly check-ins and monthly scorecards.",
+    color: "#C8A65E",
+    icon: "phone"
+  },
+  {
+    title: "Data Integration",
+    description: "Everything connected. Your labs drive your nutrition, training, and recovery. Nothing siloed, every variable optimized.",
+    color: "#06B6D4",
+    icon: "database"
+  }
+];
+---
+
+<section id="system" class="py-12 md:py-20 bg-card">
+  <div class="container px-4">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-3 block">
+        The System
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">
+        The 6 Pillars of Executive Health
+      </h2>
+      <p class="text-muted-foreground">
+        This is how we turn your data into results. A comprehensive system designed for busy executives who demand precision.
+      </p>
+    </div>
+
+    <!-- Pillars grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {pillars.map((pillar) => (
+        <div class="group p-6 rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow">
+          <div
+            class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+            style={`background-color: ${pillar.color}20`}
+          >
+            {pillar.icon === "beaker" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg>
+            )}
+            {pillar.icon === "utensils" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            )}
+            {pillar.icon === "dumbbell" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg>
+            )}
+            {pillar.icon === "moon" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            )}
+            {pillar.icon === "phone" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            )}
+            {pillar.icon === "database" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            )}
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-foreground">{pillar.title}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{pillar.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

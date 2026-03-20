@@ -1,0 +1,65 @@
+---
+const successStories = [
+  {
+    name: "Linda Theisen",
+    title: "VP, Hilton Supply Management",
+    quote: "I have been working with Jared and Emily for the past 7 weeks. From day one, I knew this approach was different. They truly understand the unique challenges of executive life - the travel, the stress, the endless demands. The comprehensive blood work they provide is truly game-changing.",
+    highlight: "Results in 7 weeks through 2 holidays"
+  },
+  {
+    name: "Carrie P.",
+    title: "Nurse & Mom of 4",
+    quote: "Emily and Jared were just what I needed at this point in my life. They thoroughly listened from day 1 and made changes throughout the program based on how I felt or what I needed both with my workouts and my nutrition. They helped me create realistic goals and find the most effective ways to make sustainable changes.",
+    highlight: "Sustainable lifestyle transformation"
+  },
+  {
+    name: "Maryam T.",
+    title: "Client",
+    quote: "Working with Emily has been truly transformative. I've noticed a big difference in my energy, strength, and confidence. What I've gained mentally has been priceless. I've never felt this supported before and I've had different coaches throughout the years.",
+    highlight: "Transformative results"
+  }
+];
+---
+
+<section id="results" class="py-20 md:py-32 bg-background">
+  <div class="container px-4">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
+        Success Stories
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Real Results from Real Women
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        See the transformations achieved by women who committed to the system.
+      </p>
+    </div>
+
+    <!-- Success stories -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {successStories.map((story) => (
+        <div class="overflow-hidden bg-white rounded-lg border border-border hover:border-primary/30 transition-colors p-8 shadow-sm">
+          <!-- Highlight badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            {story.highlight}
+          </div>
+
+          <!-- Quote -->
+          <div class="relative mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute -top-2 -left-2 text-primary/20"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+            <blockquote class="text-base text-muted-foreground leading-relaxed pl-6">
+              "{story.quote}"
+            </blockquote>
+          </div>
+
+          <!-- Name -->
+          <div>
+            <p class="font-bold text-foreground">{story.name}</p>
+            <p class="text-sm text-muted-foreground">{story.title}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

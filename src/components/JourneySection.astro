@@ -1,0 +1,59 @@
+---
+const journeySteps = [
+  { month: 1, title: "Reveal", description: "Comprehensive labs and baseline data. We uncover what's really happening inside.", color: "#9F7AEA" },
+  { month: 2, title: "Foundation", description: "Biomarker deep-dive. Your personalized protocols go live.", color: "#805AD5" },
+  { month: 3, title: "Calibration", description: "Fine-tune based on your body's response. Energy and sleep improve.", color: "#6B46C1" },
+  { month: 4, title: "Development", description: "Momentum builds. Strength, clarity, and vitality increase.", color: "#553C9A" },
+  { month: 5, title: "Expression", description: "Second lab panel. See the biomarker shifts in black and white.", color: "#44337A" },
+  { month: 6, title: "Integration", description: "System locked in. You now have a blueprint for long-term health.", color: "#6E5B9A" },
+];
+---
+
+<section class="py-12 md:py-20 bg-white overflow-hidden">
+  <div class="container px-4">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-3 block">
+        The Journey
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">
+        Your 6-Month Transformation
+      </h2>
+      <p class="text-muted-foreground">
+        By day 90, most clients report more energy, better sleep, and feeling like themselves again.
+        By month 6, you've built a sustainable system for long-term health and vitality.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Connection line -->
+      <div class="absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-[#9F7AEA] via-[#6B46C1] to-[#6E5B9A] hidden lg:block"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+        {journeySteps.map((step) => (
+          <div class="relative text-center lg:text-left">
+            <div
+              class="relative z-10 w-10 h-10 mx-auto lg:mx-0 rounded-full flex items-center justify-center text-white font-bold mb-3 shadow-lg"
+              style={`background-color: ${step.color}; box-shadow: 0 4px 14px ${step.color}40`}
+            >
+              {step.month}
+            </div>
+            <h3 class="text-base font-bold text-foreground mb-1">{step.title}</h3>
+            <p class="text-xs text-muted-foreground leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Highlight callout -->
+    <div class="mt-12 max-w-2xl mx-auto text-center">
+      <div class="inline-block px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20">
+        <p class="text-lg font-medium text-foreground">
+          <span class="text-primary">The Goal:</span> Optimize your health now so you can{" "}
+          <span class="text-primary font-bold">thrive for decades</span> to come
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

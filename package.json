@@ -1,0 +1,17 @@
+{
+  "name": "ep-landing-women",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.7.12",
+    "@astrojs/tailwind": "^6.0.2",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.16",
+    "sharp": "^0.33.5"
+  }
+}

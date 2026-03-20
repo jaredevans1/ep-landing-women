@@ -1,0 +1,88 @@
+---
+const BOOKING_URL = "https://app.iclosed.io/e/evansperformance/executive-health-precision-audit";
+const AUDIT_TOOL_URL = "https://women-audit.evansperformancesystems.com";
+
+const stats = [
+  { value: "135+", label: "Clients Coached", icon: "users" },
+  { value: "55+", label: "Biomarkers Analyzed", icon: "beaker" },
+  { value: "40+", label: "Years Team Experience", icon: "activity" },
+];
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <!-- Background gradient effects -->
+  <div class="absolute inset-0 bg-gradient-to-b from-background via-background to-background"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[350px] bg-[hsl(261_27%_48%/0.08)] rounded-full blur-[150px]"></div>
+
+  <div class="container relative z-10 px-4 py-20 md:py-32">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border mb-8 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+        <span class="text-sm font-medium text-muted-foreground">Health Optimization for High-Performing Women</span>
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+        Reclaim Your Energy. <span class="text-gradient">Optimize Your Health.</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+        55 biomarkers analyzed to build personalized training, nutrition, and recovery protocols designed for your body, your goals, and your busy life.
+      </p>
+
+      <!-- Urgency Banner -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/30 mb-8 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        <span class="text-sm font-medium text-primary">Limited Availability: Only 8 Health Audits per week</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-stretch mb-16">
+        <a
+          href={AUDIT_TOOL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center justify-center text-lg px-8 h-16 rounded-lg bg-white border-2 border-[hsl(142_71%_45%/0.5)] text-foreground hover:bg-[hsl(142_71%_45%)] hover:border-[hsl(142_71%_45%)] hover:text-white hover:shadow-[0_0_20px_hsl(142_71%_45%/0.4)] hover:scale-[1.02] transition-all duration-300 font-medium"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[hsl(142_71%_45%)] group-hover:text-white"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+          Get Your Free Health Score
+        </a>
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center justify-center text-lg px-8 h-16 rounded-lg bg-primary text-white hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(261_27%_48%/0.4)] hover:scale-[1.02] transition-all duration-300 font-medium"
+        >
+          Book Your Health Audit
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
+        {stats.map((stat) => (
+          <div class="flex flex-col items-center p-6 rounded-2xl bg-white border border-border shadow-sm">
+            <div class="text-primary mb-2">
+              {stat.icon === "users" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+              {stat.icon === "beaker" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg>
+              )}
+              {stat.icon === "activity" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+              )}
+            </div>
+            <span class="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</span>
+            <span class="text-sm text-muted-foreground">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+</section>

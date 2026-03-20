@@ -1,0 +1,83 @@
+---
+const BOOKING_URL = "https://app.iclosed.io/e/evansperformance/executive-health-precision-audit";
+const AUDIT_TOOL_URL = "https://women-audit.evansperformancesystems.com";
+
+const stats = [
+  { value: "135+", label: "Clients Coached", icon: "users" },
+  { value: "55+", label: "Biomarkers Analyzed", icon: "beaker" },
+  { value: "40+", label: "Years Team Experience", icon: "activity" },
+];
+---
+
+<section class="py-20 md:py-32 bg-background relative overflow-hidden">
+  <!-- Background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[120px]"></div>
+
+  <div class="container px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Stats -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        {stats.map((stat) => (
+          <div class="flex items-center gap-3">
+            <div class="text-primary">
+              {stat.icon === "users" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+              {stat.icon === "beaker" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg>
+              )}
+              {stat.icon === "activity" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+              )}
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-foreground">{stat.value}</div>
+              <div class="text-xs text-muted-foreground">{stat.label}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Headline -->
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Ready to Optimize Your <span class="text-gradient">Health & Energy?</span>
+      </h2>
+
+      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+        Our system is designed for busy, high-performing women who want precision, results, and sustainable transformation. Your biology, visualized. Your health, optimized.
+      </p>
+
+      <!-- Urgency text -->
+      <p class="text-sm text-primary font-medium mb-6">
+        Limited to 8 audits per week to ensure personalized attention
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center justify-center text-base sm:text-lg px-6 sm:px-10 h-16 rounded-lg bg-primary text-white hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(261_27%_48%/0.4)] hover:scale-[1.02] transition-all duration-300 font-medium"
+        >
+          Book Your Health Audit
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href={AUDIT_TOOL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center justify-center text-base sm:text-lg px-6 sm:px-10 h-16 rounded-lg bg-white border-2 border-[hsl(142_71%_45%/0.5)] text-foreground hover:bg-[hsl(142_71%_45%)] hover:border-[hsl(142_71%_45%)] hover:text-white hover:shadow-[0_0_20px_hsl(142_71%_45%/0.4)] hover:scale-[1.02] transition-all duration-300 font-medium"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-[hsl(142_71%_45%)] group-hover:text-white"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+          Get Your Free Health Score
+        </a>
+      </div>
+
+      <!-- Trust text -->
+      <p class="mt-8 text-sm text-muted-foreground">
+        Helping high-performing women optimize their health since 2023.
+      </p>
+    </div>
+  </div>
+</section>

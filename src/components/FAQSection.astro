@@ -1,0 +1,87 @@
+---
+const faqs = [
+  {
+    question: "How much time does this require?",
+    answer: "Our system is designed for busy women. Expect 3-5 hours per week for training, plus the time you already spend eating. Meal prep and planning are streamlined with our flexible nutrition architecture. No rigid meal plans. Weekly check-ins take 15-30 minutes, and biomarker review calls are scheduled around your calendar."
+  },
+  {
+    question: "What's included in the bloodwork analysis?",
+    answer: "We analyze 160+ biomarkers across hormonal health (estrogen, progesterone, thyroid, cortisol), metabolic function (glucose, insulin, HbA1c), cardiovascular markers (ApoB, Lp(a), LDL-P), inflammation indicators, micronutrient status, and recovery/aging markers. Your labs become the blueprint for every protocol decision."
+  },
+  {
+    question: "How do you address women's hormonal health?",
+    answer: "Women's hormonal optimization requires a different approach. We analyze estrogen, progesterone, and their ratios alongside thyroid and cortisol. Whether you're navigating perimenopause, menopause, or simply want to optimize your hormonal health, protocols are tailored to your cycle phase and life stage. Everything is data-driven."
+  },
+  {
+    question: "Is this just another fitness program?",
+    answer: "No. This is full-stack health optimization. Unlike programs that give you a workout PDF, we integrate biomarker data, nutrition architecture, training protocols, sleep/recovery optimization, and ongoing coaching into one connected system. Every variable is linked. Nothing is siloed."
+  },
+  {
+    question: "What if I travel frequently for work?",
+    answer: "Our system was designed for women with demanding schedules. You'll receive specific recommendations for hotel gyms, restaurant menus, and on-the-go nutrition strategies. Your training adapts based on what equipment is available, and our coaching team is available to adjust protocols in real-time."
+  },
+  {
+    question: "How is this different from other wellness programs?",
+    answer: "Most solutions are fragmented. Your doctor doesn't talk to your trainer. Your nutritionist doesn't see your labs. We integrate everything: your labs dictate your training, your training informs your nutrition, your recovery data adjusts your programming. One connected system with one team coordinating your transformation."
+  }
+];
+---
+
+<section id="faq" class="py-20 md:py-32 bg-white">
+  <div class="container px-4">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
+        FAQ
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item bg-background border border-border rounded-xl px-6 overflow-hidden" data-index={index}>
+          <button
+            class="faq-trigger w-full text-left text-foreground hover:text-primary py-6 flex items-center justify-between font-medium"
+            aria-expanded="false"
+          >
+            {faq.question}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-200 flex-shrink-0 ml-4"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-content hidden pb-6">
+            <p class="text-muted-foreground leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      const content = item?.querySelector('.faq-content');
+      const chevron = item?.querySelector('.faq-chevron');
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) {
+          other.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
+          other.querySelector('.faq-content')?.classList.add('hidden');
+          other.querySelector('.faq-chevron')?.classList.remove('rotate-180');
+          other.classList.remove('border-primary/50');
+        }
+      });
+
+      // Toggle current
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      content?.classList.toggle('hidden');
+      chevron?.classList.toggle('rotate-180');
+      item?.classList.toggle('border-primary/50');
+    });
+  });
+</script>
