@@ -1,25 +1,25 @@
 ---
 const metricBadges = [
-  { value: "182.4", label: "lbs", color: "blue", icon: "scale" },
-  { value: "-520", label: "deficit", color: "green", icon: "target" },
-  { value: "165g", label: "protein", color: "orange", icon: "zap" },
+  { value: "165.2", label: "lbs", color: "blue", icon: "scale" },
+  { value: "-350", label: "deficit", color: "green", icon: "target" },
+  { value: "150g", label: "protein", color: "orange", icon: "zap" },
 ];
 
 const statBoxes = [
-  { label: "Current Weight", value: "182.4", unit: "lbs", trend: "-2.1", trendColor: "green" },
-  { label: "Body Fat", value: "16.8", unit: "%", trend: "-1.2", trendColor: "green" },
-  { label: "Lean Mass", value: "151.8", unit: "lbs", trend: "+0.8", trendColor: "green" },
-  { label: "BMR", value: "1,847", unit: "cal" },
+  { label: "Current Weight", value: "165.2", unit: "lbs", trend: "-0.8", trendColor: "green" },
+  { label: "Body Fat", value: "27.4", unit: "%", trend: "-0.4", trendColor: "green" },
+  { label: "Lean Mass", value: "119.9", unit: "lbs", trend: "+0.3", trendColor: "green" },
+  { label: "BMR", value: "1,458", unit: "cal" },
 ];
 
 const strategies = [
-  { title: "Nutrition", status: "On Track", progress: 78, color: "#22C55E", icon: "apple", metrics: [{ label: "Calories", value: "2,145 / 2,400" }, { label: "Protein", value: "165g / 180g" }] },
-  { title: "Training", status: "Active Phase", progress: 65, color: "#3B82F6", icon: "dumbbell", metrics: [{ label: "Sessions", value: "4 / 5" }, { label: "Volume", value: "32,450 lbs" }] },
-  { title: "Recovery", status: "Optimal", progress: 92, color: "#A855F7", icon: "moon", metrics: [{ label: "Sleep Score", value: "87%" }, { label: "HRV", value: "62ms" }] },
+  { title: "Nutrition", status: "On Track", progress: 78, color: "#22C55E", icon: "apple", metrics: [{ label: "Calories", value: "1,740 / 1,900" }, { label: "Protein", value: "142g / 150g" }] },
+  { title: "Training", status: "Active Phase", progress: 65, color: "#3B82F6", icon: "dumbbell", metrics: [{ label: "Sessions", value: "3 / 4" }, { label: "Volume", value: "14,200 lbs" }] },
+  { title: "Recovery", status: "Optimal", progress: 92, color: "#A855F7", icon: "moon", metrics: [{ label: "Sleep Score", value: "87%" }, { label: "HRV", value: "55ms" }] },
 ];
 
 const biomarkers = [
-  { label: "Testosterone", value: "687", unit: "ng/dL", grade: "A", gradeColor: "#22C55E" },
+  { label: "Estradiol", value: "85", unit: "pg/mL", grade: "A", gradeColor: "#22C55E" },
   { label: "Cortisol", value: "12.4", unit: "ug/dL", grade: "B+", gradeColor: "#F97316" },
   { label: "HbA1c", value: "5.1", unit: "%", grade: "A", gradeColor: "#22C55E" },
   { label: "ApoB", value: "82", unit: "mg/dL", grade: "A-", gradeColor: "#22C55E" },
@@ -32,8 +32,8 @@ const colorClasses: Record<string, string> = {
 };
 ---
 
-<section class="py-12 md:py-20 bg-background overflow-hidden">
-  <div class="container px-4">
+<section class="py-16 md:py-28 overflow-hidden bg-background relative">
+  <div class="container px-4 relative z-10">
     <!-- Section header -->
     <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-3 block">
@@ -48,15 +48,19 @@ const colorClasses: Record<string, string> = {
     </div>
 
     <!-- Dashboard Preview Grid -->
-    <div class="max-w-6xl mx-auto space-y-4">
+    <div class="max-w-6xl mx-auto relative">
+      <!-- Outer glow wrapper -->
+      <div class="absolute -inset-4 bg-gradient-to-b from-primary/25 via-primary/15 to-primary/25 rounded-3xl blur-xl"></div>
+      <div class="absolute -inset-8 bg-primary/8 rounded-[2rem] blur-[60px]"></div>
+    <div class="relative space-y-4 p-4 md:p-6 rounded-2xl bg-[#1a1525]/80 border border-primary/20">
       <!-- Top Row -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- Welcome Card -->
-        <div class="lg:col-span-2 p-5 bg-card rounded-lg border border-border">
+        <div class="lg:col-span-2 p-5 bg-card rounded-2xl border border-primary/15 shadow-[0_0_15px_hsl(261_27%_48%/0.08)]">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
             <div>
               <p class="text-muted-foreground text-sm">Welcome back</p>
-              <h3 class="text-xl font-bold text-foreground">Executive Dashboard</h3>
+              <h3 class="text-xl font-bold text-foreground">Your Dashboard</h3>
             </div>
             <div class="flex gap-2 flex-wrap">
               {metricBadges.map((badge) => (
@@ -86,7 +90,7 @@ const colorClasses: Record<string, string> = {
         </div>
 
         <!-- Health Score Card -->
-        <div class="p-5 bg-card rounded-lg border border-border">
+        <div class="p-5 bg-card rounded-2xl border border-primary/15 shadow-[0_0_15px_hsl(261_27%_48%/0.08)]">
           <h4 class="text-sm font-medium text-muted-foreground mb-3">Biomarker Health Score</h4>
           <div class="flex items-center justify-center">
             <div class="relative w-28 h-28">
@@ -109,7 +113,7 @@ const colorClasses: Record<string, string> = {
       <!-- Middle Row - Strategy Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {strategies.map((s) => (
-          <div class="p-5 bg-card rounded-lg border border-border border-l-4" style={`border-left-color: ${s.color}`}>
+          <div class="p-5 bg-card rounded-2xl border border-primary/15 shadow-[0_0_15px_hsl(261_27%_48%/0.08)] border-l-4" style={`border-left-color: ${s.color}`}>
             <div class="flex items-center gap-3 mb-3">
               <div class="w-9 h-9 rounded-lg flex items-center justify-center" style={`background-color: ${s.color}20; color: ${s.color}`}>
                 {s.icon === "apple" && (
@@ -151,7 +155,7 @@ const colorClasses: Record<string, string> = {
       <!-- Bottom Row -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <!-- Energy Balance -->
-        <div class="p-5 bg-card rounded-lg border border-border">
+        <div class="p-5 bg-card rounded-2xl border border-primary/15 shadow-[0_0_15px_hsl(261_27%_48%/0.08)]">
           <div class="flex items-center justify-between mb-4">
             <h4 class="text-sm font-medium text-muted-foreground">Energy Balance</h4>
             <span class="text-xs text-muted-foreground">Last 7 days</span>
@@ -160,33 +164,33 @@ const colorClasses: Record<string, string> = {
             <div>
               <div class="flex justify-between text-sm mb-1.5">
                 <span class="text-muted-foreground text-xs">Intake</span>
-                <span class="font-medium text-foreground text-xs">2,145 cal</span>
+                <span class="font-medium text-foreground text-xs">1,740 cal</span>
               </div>
               <div class="h-2.5 bg-muted rounded-full overflow-hidden">
-                <div class="h-full rounded-full" style="width: 71.5%; background-color: #22C55E"></div>
+                <div class="h-full rounded-full" style="width: 83%; background-color: #22C55E"></div>
               </div>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1.5">
                 <span class="text-muted-foreground text-xs">TDEE</span>
-                <span class="font-medium text-foreground text-xs">2,665 cal</span>
+                <span class="font-medium text-foreground text-xs">2,100 cal</span>
               </div>
               <div class="h-2.5 bg-muted rounded-full overflow-hidden">
-                <div class="h-full rounded-full" style="width: 88.8%; background-color: #F97316"></div>
+                <div class="h-full rounded-full" style="width: 88%; background-color: #F97316"></div>
               </div>
             </div>
           </div>
           <div class="mt-4 pt-3 border-t border-border">
             <div class="flex justify-between items-center">
               <span class="text-sm text-muted-foreground">Daily Deficit</span>
-              <span class="text-lg font-bold text-[#22C55E]">-520 cal</span>
+              <span class="text-lg font-bold text-[#22C55E]">-350 cal</span>
             </div>
-            <p class="text-xs text-muted-foreground mt-1">On track for 1 lb/week fat loss</p>
+            <p class="text-xs text-muted-foreground mt-1">On track for 0.5-1 lb/week fat loss</p>
           </div>
         </div>
 
         <!-- Biomarker Highlights -->
-        <div class="p-5 bg-card rounded-lg border border-border">
+        <div class="p-5 bg-card rounded-2xl border border-primary/15 shadow-[0_0_15px_hsl(261_27%_48%/0.08)]">
           <div class="flex items-center justify-between mb-4">
             <h4 class="text-sm font-medium text-muted-foreground">Biomarker Highlights</h4>
             <span class="text-xs px-2 py-1 rounded-full bg-[#22C55E]/20 text-[#22C55E]">55 analyzed</span>
@@ -207,6 +211,7 @@ const colorClasses: Record<string, string> = {
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </section>

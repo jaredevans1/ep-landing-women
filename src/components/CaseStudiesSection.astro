@@ -1,22 +1,33 @@
 ---
+import lindaImg from "@/assets/headshots/linda.jpeg";
+import maryamImg from "@/assets/headshots/maryam.jpg";
+
 const successStories = [
   {
-    name: "Linda Theisen",
-    title: "VP, Hilton Supply Management",
-    quote: "I have been working with Jared and Emily for the past 7 weeks. From day one, I knew this approach was different. They truly understand the unique challenges of executive life - the travel, the stress, the endless demands. The comprehensive blood work they provide is truly game-changing.",
-    highlight: "Results in 7 weeks through 2 holidays"
+    name: "Linda T., 64",
+    title: "VP, Supply Management",
+    goal: "Optimize body composition for longevity and support graceful aging, despite a demanding executive travel schedule",
+    results: ["10 lbs lost, body fat from 28% to 26% in 5 months", "Sustained progress through holidays, travel, and work demands", "Gained strength, mobility, and confidence"],
+    quote: "From day one, I knew this approach was different. They truly understand the unique challenges of executive life - the travel, the stress, the endless demands. The comprehensive blood work they provide is truly game-changing.",
+    initials: "LT",
+    image: lindaImg,
   },
   {
-    name: "Carrie P.",
+    name: "Carrie P., 42",
     title: "Nurse & Mom of 4",
+    goal: "Improve energy, lose stubborn belly fat, and manage stress while balancing four kids, a career, and early perimenopause",
+    results: ["Improved energy and sleep quality", "Increased endurance and stamina", "Gained confidence in her long-term health trajectory"],
     quote: "Emily and Jared were just what I needed at this point in my life. They thoroughly listened from day 1 and made changes throughout the program based on how I felt or what I needed both with my workouts and my nutrition. They helped me create realistic goals and find the most effective ways to make sustainable changes.",
-    highlight: "Sustainable lifestyle transformation"
+    initials: "CP",
   },
   {
-    name: "Maryam T.",
-    title: "Client",
+    name: "Maryam T., 44",
+    title: "Business Owner",
+    goal: "Build strength, optimize her physique, and balance her hormones",
+    results: ["6 lbs lost with visible core definition", "Increased VO2 max", "Improved all biomarkers", "Deeper understanding of what her body needs"],
     quote: "Working with Emily has been truly transformative. I've noticed a big difference in my energy, strength, and confidence. What I've gained mentally has been priceless. I've never felt this supported before and I've had different coaches throughout the years.",
-    highlight: "Transformative results"
+    initials: "MT",
+    image: maryamImg,
   }
 ];
 ---
@@ -39,24 +50,50 @@ const successStories = [
     <!-- Success stories -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
       {successStories.map((story) => (
-        <div class="overflow-hidden bg-white rounded-lg border border-border hover:border-primary/30 transition-colors p-8 shadow-sm">
-          <!-- Highlight badge -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            {story.highlight}
+        <div class="overflow-hidden bg-white rounded-2xl border border-border hover:border-primary/30 transition-colors shadow-sm flex flex-col">
+          <!-- Photo + Name header -->
+          <div class="p-6 pb-4 flex items-center gap-4">
+            <!-- Photo circle -->
+            {story.image ? (
+              <img src={story.image.src} alt={story.name} class="w-14 h-14 rounded-full object-cover border-2 border-primary/20 flex-shrink-0" />
+            ) : (
+              <div class="w-14 h-14 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center flex-shrink-0">
+                <span class="text-primary font-bold text-lg">{story.initials}</span>
+              </div>
+            )}
+            <div>
+              <p class="font-bold text-foreground">{story.name}</p>
+              <p class="text-sm text-muted-foreground">{story.title}</p>
+            </div>
+          </div>
+
+          <!-- Goal -->
+          <div class="px-6 pb-4">
+            <p class="text-xs font-semibold text-primary uppercase tracking-wide mb-1">Goal</p>
+            <p class="text-sm text-foreground">{story.goal}</p>
+          </div>
+
+          <!-- Results -->
+          <div class="px-6 pb-4">
+            <p class="text-xs font-semibold text-primary uppercase tracking-wide mb-2">Results</p>
+            <div class="space-y-1.5">
+              {story.results.map((result) => (
+                <div class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span class="text-sm text-foreground">{result}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <!-- Quote -->
-          <div class="relative mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute -top-2 -left-2 text-primary/20"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
-            <blockquote class="text-base text-muted-foreground leading-relaxed pl-6">
-              "{story.quote}"
-            </blockquote>
-          </div>
-
-          <!-- Name -->
-          <div>
-            <p class="font-bold text-foreground">{story.name}</p>
-            <p class="text-sm text-muted-foreground">{story.title}</p>
+          <div class="px-6 pb-6 pt-2 mt-auto border-t border-border/50">
+            <div class="relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary/15 mb-2"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+              <blockquote class="text-sm text-muted-foreground leading-relaxed italic">
+                "{story.quote}"
+              </blockquote>
+            </div>
           </div>
         </div>
       ))}

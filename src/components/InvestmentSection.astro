@@ -1,0 +1,98 @@
+---
+const BOOKING_URL = "https://cal.com/emily-evans-performance/precision-health-consult";
+
+const features = [
+  "Performance Portal access",
+  "Wearable sync (WHOOP, Oura, Garmin, and more)",
+  "Training program designed for your life stage, energy, and schedule",
+  "Nutrition strategy and body composition targets",
+  "Comprehensive lab panel: hormones, thyroid, metabolic, and inflammatory markers most doctors skip",
+  "In-depth biomarker analysis report",
+  "Live bloodwork review with your coach",
+  "Bloodwork-informed supplement plan",
+  "Thorne dispensary membership (25% off for life)",
+  "Access to private nurse practitioner for HRT, peptides, and clinical oversight",
+  "Unlimited coaching access (text, phone, and video)",
+  "Weekly check-ins and live coaching calls",
+  "Monthly scorecard",
+  "Private community with resources, guides, and direct peer support",
+  "Travel and lifestyle protocols library",
+  "Priority scheduling",
+];
+---
+
+<section class="py-20 md:py-32 bg-background relative overflow-hidden">
+  <div class="container px-4 relative z-10">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
+        Investment
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        The Precision Health System
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Labs, coaching, nutrition, supplements, and recovery. One system built entirely from your data.
+      </p>
+    </div>
+
+    <!-- Card -->
+    <div class="max-w-2xl mx-auto relative">
+      <!-- Outer glow -->
+      <div class="absolute -inset-1 bg-gradient-to-b from-primary/40 via-primary/20 to-primary/40 rounded-3xl blur-sm"></div>
+
+      <div class="relative rounded-3xl bg-[#1a1525] border border-primary/30 p-8 md:p-12 overflow-hidden">
+        <!-- Inner ambient glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-primary/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] bg-primary/8 rounded-full blur-[80px]"></div>
+
+        <div class="relative z-10">
+          <!-- Tier name -->
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Signature</h3>
+          <p class="text-white/70 text-sm md:text-base mb-8">
+            The full system. Labs included, unlimited coaching, personalized training and nutrition. Everything engineered from your data.
+          </p>
+
+          <!-- Disarming line -->
+          <div class="flex items-center gap-2 mb-4 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <span class="text-sm text-white/70">Most clients invest less per month than a single specialist visit. Flexible payment options available. We'll walk through everything on your call.</span>
+          </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-8"></div>
+
+          <!-- Features checklist -->
+          <ul class="space-y-4 mb-10">
+            {features.map((feature) => (
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"/></svg>
+                <span class="text-sm md:text-base text-white/80">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- 30-Day Guarantee -->
+          <div class="mb-6 flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="text-sm text-white/70">30-day satisfaction guarantee. Follow the system and see results, or get your coaching investment back.</span>
+          </div>
+
+          <!-- CTA -->
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center justify-center w-full text-base sm:text-lg h-14 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 hover:shadow-[0_0_30px_hsl(261_27%_48%/0.5)] hover:scale-[1.01] transition-all duration-300 btn-glow-pulse"
+          >
+            Book Your Free Consult
+            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <!-- What to expect -->
+          <p class="text-sm text-white/50 text-center mt-4">Your consult is a quick, 15-minute conversation to help us understand your situation, identify where the gaps might be, and whether this system could make sense for you. No pressure, no pitch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,14 +2,17 @@
 import Layout from "@/layouts/Layout.astro";
 import NavigationHeader from "@/components/NavigationHeader.astro";
 import HeroSection from "@/components/HeroSection.astro";
-import VideoSection from "@/components/VideoSection.astro";
+import DifferentiationSection from "@/components/DifferentiationSection.astro";
+import RealitySection from "@/components/RealitySection.astro";
 import PillarsSection from "@/components/PillarsSection.astro";
 import DashboardPreviewSection from "@/components/DashboardPreviewSection.astro";
+import PortalPreviewSection from "@/components/PortalPreviewSection.astro";
 import CaseStudiesSection from "@/components/CaseStudiesSection.astro";
 import JourneySection from "@/components/JourneySection.astro";
 import TeamSection from "@/components/TeamSection.astro";
 import QualifierSection from "@/components/QualifierSection.astro";
-import TestimonialsSection from "@/components/TestimonialsSection.astro";
+import InvestmentSection from "@/components/InvestmentSection.astro";
+import SuccessStoriesSection from "@/components/SuccessStoriesSection.astro";
 import FAQSection from "@/components/FAQSection.astro";
 import CTASection from "@/components/CTASection.astro";
 import Footer from "@/components/Footer.astro";
@@ -19,14 +22,24 @@ import Footer from "@/components/Footer.astro";
   <NavigationHeader />
   <main class="min-h-screen">
     <HeroSection />
-    <VideoSection />
+    <!-- Divider between hero and content -->
+    <div class="relative py-2">
+      <div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+    </div>
+    <DifferentiationSection />
+    <RealitySection />
     <PillarsSection />
-    <DashboardPreviewSection />
     <CaseStudiesSection />
+    <div class="relative py-2">
+      <div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+    </div>
+    <PortalPreviewSection />
+    <SuccessStoriesSection />
+    <DashboardPreviewSection />
     <JourneySection />
     <TeamSection />
     <QualifierSection />
-    <TestimonialsSection />
+    <InvestmentSection />
     <FAQSection />
     <CTASection />
   </main>

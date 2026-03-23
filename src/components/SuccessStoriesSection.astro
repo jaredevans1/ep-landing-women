@@ -1,0 +1,201 @@
+---
+import lindaHeadshot from "@/assets/headshots/linda.jpeg";
+import jeffHeadshot from "@/assets/headshots/jeff.jpeg";
+import derekHeadshot from "@/assets/headshots/derek.jpeg";
+import lucasHeadshot from "@/assets/headshots/lucas.jpeg";
+import jasonHeadshot from "@/assets/headshots/jason.jpeg";
+import markHeadshot from "@/assets/headshots/mark.jpeg";
+import mattHeadshot from "@/assets/headshots/matt.jpeg";
+import randyHeadshot from "@/assets/headshots/randy.jpeg";
+import terryHeadshot from "@/assets/headshots/terry.jpeg";
+import mattbHeadshot from "@/assets/headshots/mattb.jpeg";
+import tracyHeadshot from "@/assets/headshots/tracy.jpeg";
+import richHeadshot from "@/assets/headshots/rich.jpeg";
+import maryamHeadshot from "@/assets/headshots/maryam.jpg";
+
+const testimonials = [
+  {
+    name: "Linda T.",
+    title: "VP - Hospitality & Supply Management",
+    quote: "Most busy, executive women don't take the time to focus on their health. Jared and Emily make it easy to incorporate the necessary changes into your busy schedule. I am seeing results in both my physical appearance and in my strength, all while navigating through 2 holidays.",
+    initials: "LT",
+    headshot: lindaHeadshot,
+  },
+  {
+    name: "Carrie P.",
+    title: "Nurse & Mom of 4",
+    quote: "I've always worked out, but haven't given much thought to what I actually need and how to best physically and mentally support myself. Emily and Jared were just what I needed at this point in my life. They thoroughly listened from day 1 and made changes based on how I felt or what I needed.",
+    initials: "CP",
+    headshot: null,
+  },
+  {
+    name: "Jeff H.",
+    title: "Managing Director - Strategy Consulting",
+    quote: "Within a few days of onboarding, I had a game plan for meals, workouts, and even specific recommendations for business trips. 20% increase in sleep score, 6% reduction in body fat. The outcome surpassed even my highest expectations.",
+    initials: "JH",
+    headshot: jeffHeadshot,
+  },
+  {
+    name: "Maryam T.",
+    title: "Business Owner",
+    quote: "What I've gained mentally has been priceless, even more so than the weight loss. I feel more equipped to handle everything going on. More patience, more grace, more sleep, less guilt. I feel so blessed to say I'm a strong 45-year-old.",
+    initials: "MT",
+    headshot: maryamHeadshot,
+  },
+  {
+    name: "Jen S.",
+    title: "Nurse Anesthetist",
+    quote: "I started thinking about the clothes I want to take on vacation and tried on some of my shorts... They are too big!!!! Like unwearable too big! I couldn't believe it!!!",
+    initials: "J",
+    headshot: null,
+  },
+  {
+    name: "Derek B.",
+    title: "Director - Supply Chain",
+    quote: "They take a holistic view, optimizing nutrition, sleep, hormones, stress management, and even the day-to-day challenges like travel or eating out. That level of support has turned what could have been another short-term plan into a sustainable lifestyle change.",
+    initials: "DB",
+    headshot: derekHeadshot,
+  },
+  {
+    name: "Lucas S.",
+    title: "Director - Healthcare Operations",
+    quote: "After 6 weeks I've lost 12 lbs, 3% body fat, and added almost 2% skeletal muscle mass. My wife started with them at the same time and has had fantastic results. She loves working with Emily, and doing this together has been great.",
+    initials: "LS",
+    headshot: lucasHeadshot,
+  },
+  {
+    name: "Tracy S.",
+    title: "Business Owner",
+    quote: "I never thought I could cut out almost all cookies, cake, and ice cream and still be happy, but there are so many healthier alternatives. The changes have been remarkable. I feel as good as I have felt in a long time and people have noticed changes in my body.",
+    initials: "TS",
+    headshot: tracyHeadshot,
+  },
+  {
+    name: "Mark S.",
+    title: "Director - Business Development",
+    quote: "I've lost 15 pounds, but more importantly, my energy levels, fitness, and overall performance have skyrocketed. They've tailored my workouts and nutrition to fit around my travel schedule, making it seamless to stay on track no matter where I am.",
+    initials: "MS",
+    headshot: markHeadshot,
+  },
+  {
+    name: "Matt D.",
+    title: "Partner - Management Consulting",
+    quote: "Their approach is truly holistic, focusing not just on physical training, but also mindset, nutrition, and recovery. Their platform is top notch. They have crafted a technology infrastructure and tools to enable data-driven coaching. Their professionalism, genuine support, and result-driven methodology are unmatched.",
+    initials: "MD",
+    headshot: mattHeadshot,
+  },
+  {
+    name: "Randy S.",
+    title: "Executive - Environmental Health & Safety",
+    quote: "These are not crazy diet schemes and insanely long workouts. They are a science-based system which they distill down into manageable pieces. Being down over fifteen pounds is amazing, but adding muscle mass while losing weight, well that feels really good. I feel more energetic.",
+    initials: "RS",
+    headshot: randyHeadshot,
+  },
+  {
+    name: "Terry F.",
+    title: "Director - Logistics & Transportation",
+    quote: "After several months of working with Emily and Jared, I can only describe the experience as life changing. Emily helped me dial in my nutrition by building good habits and addressing behavioral issues. She made it easy. The impact goes well beyond the pounds and inches I've lost.",
+    initials: "TF",
+    headshot: terryHeadshot,
+  },
+  {
+    name: "Matt B.",
+    title: "Advisor - Wealth Management",
+    quote: "Their understanding of the body and how to gear it for health and performance is by far the best among coaches I've worked with. The system is designed to help you build sustainable habits for long term health and performance, giving you back your time and taking the guesswork out of the process.",
+    initials: "MB",
+    headshot: mattbHeadshot,
+  },
+  {
+    name: "Jason C.",
+    title: "Engineering Leader - Datacenter Infrastructure",
+    quote: "They market their data-driven approach and that is precisely how they operate, along with a very strong dose of positive encouragement. They educate me on my choices, monitor my metrics, tune my program, and I get results.",
+    initials: "JC",
+    headshot: jasonHeadshot,
+  },
+  {
+    name: "Rich",
+    title: "Sr. Leader - Product Management",
+    quote: "The personal touch of sending direct videos, accountability to your health journey, in-day chats, live feedback and communication during workouts. The tag team with Jared and Emily sets them apart from any other performance coaches.",
+    initials: "R",
+    headshot: richHeadshot,
+  },
+];
+
+// Star SVG as a reusable string
+const starIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="hsl(261 27% 48%)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+---
+
+<section class="py-20 md:py-32 bg-[#13101d] relative overflow-hidden">
+  <!-- Ambient glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[120px]"></div>
+
+  <div class="container px-4 relative z-10">
+    <!-- Section header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
+        Success Stories
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+        What Our <span class="text-primary">Clients</span> Are Saying
+      </h2>
+      <p class="text-white/60">
+        Join the high performers who have transformed their health, performance, and quality of life.
+      </p>
+    </div>
+
+    <!-- Testimonials grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      {testimonials.map((t) => (
+        <div class="relative rounded-2xl bg-[#1a1525] border border-white/8 overflow-hidden flex flex-col hover:border-primary/30 transition-colors duration-300">
+          <!-- Accent bar -->
+          <div class="h-1 bg-gradient-to-r from-primary/60 via-primary to-primary/60"></div>
+
+          <div class="p-6 flex flex-col flex-1">
+            <!-- Quote icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="hsl(261 27% 48% / 0.25)" stroke="none" class="mb-3 flex-shrink-0">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+            </svg>
+
+            <!-- Stars -->
+            <div class="flex gap-1 mb-4">
+              <Fragment set:html={starIcon} />
+              <Fragment set:html={starIcon} />
+              <Fragment set:html={starIcon} />
+              <Fragment set:html={starIcon} />
+              <Fragment set:html={starIcon} />
+            </div>
+
+            <!-- Quote -->
+            <blockquote class="text-sm text-white/75 leading-relaxed flex-1 mb-6">
+              "{t.quote}"
+            </blockquote>
+
+            <!-- Divider -->
+            <div class="h-px bg-white/10 mb-4"></div>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3">
+              {t.headshot ? (
+                <img
+                  src={t.headshot.src}
+                  alt={t.name}
+                  class="w-10 h-10 rounded-full object-cover border border-primary/30"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary text-xs font-semibold">
+                  {t.initials}
+                </div>
+              )}
+              <div>
+                <p class="text-white text-sm font-semibold">{t.name}</p>
+                <p class="text-white/50 text-xs">{t.title}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

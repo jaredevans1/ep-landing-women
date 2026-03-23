@@ -1,93 +1,63 @@
 ---
-import { Image } from "astro:assets";
 import emilyImg from "@/assets/team/emily.jpg";
 import jaredImg from "@/assets/team/jared.jpg";
 
-const teamMembers = [
+const team = [
   {
     name: "Emily Evans",
-    credentials: "MA. BSc. NASM-CNC",
+    role: "Co-Founder & Precision Health Strategist",
     image: emilyImg,
-    education: [
-      "MA. Speech Communication Sciences",
-      "BSc. Speech Pathology",
-      "Certified Nutrition Coach"
+    bio: [
+      "Emily spent five years in the ICU specializing in neuroscience and behavioral strategies with traumatic brain injury patients. Working in critical care teaches you something most wellness professionals never learn: precision matters, communication matters, and the details between \"fine\" and \"optimal\" can change everything.",
+      "But her own health journey is what drives this work. Like most women, Emily spent years being told her labs were \"normal\" while knowing something was off. Hormonal imbalances dismissed. Absent menstrual cycles. Fatigue chalked up to stress. No answers despite hours of appointments.",
+      "She trained for an Ironman, overhauled her nutrition, and still struggled to find a body composition she felt confident in. Not because she wasn't doing enough, but because no one was actually looking at her data. The social pressures women face around their bodies are relentless, and the medical system rarely meets them with real answers.",
+      "That experience is exactly why she built the women's side of Evans Performance. Emily analyzes your bloodwork, designs your nutrition architecture, and builds every protocol around the way you actually live."
     ],
-    certifications: [
-      "Former Cleveland Clinic Pediatric ICU Therapist",
-      "7+ Years Coaching & Therapy Experience"
-    ]
+    capabilities: ["Nutrition Architecture", "Hormonal Health", "Client Accountability", "Scorecard Analysis"]
   },
   {
     name: "Jared Evans",
-    credentials: "BSc. NASM-CPT, CNC",
+    role: "Co-Founder & Performance Architect",
     image: jaredImg,
-    education: [
-      "M.Eng Master of Engineering",
-      "BSc. Molecular Neuroscience",
-      "AAS. Electrical Engineering"
+    bio: [
+      "Jared built the Evans Performance system the way engineers solve problems: by living inside the dysfunction, measuring everything, and rebuilding from first principles. He lost 85 pounds while managing the demands of frequent travel and an executive lifestyle, and has maintained it for over six years.",
+      "With a master's in engineering and a degree in molecular neuroscience from Ohio State, Jared brings analytical depth most coaches can't touch. Together with Emily, he built the Evans Performance system from the ground up.",
+      "Jared specializes in the performance side: training programming, recovery strategies, and calibrating output based on what your body is actually telling us. He designs the protocols that make you stronger, more resilient, and more efficient.",
+      "135+ clients coached. Every decision tied to a biomarker, a trend, or a measurable outcome."
     ],
-    certifications: [
-      "Certified Personal Trainer",
-      "Certified Nutrition Coach",
-      "Ironman Coach/Athlete",
-      "10+ Years Coaching Experience"
-    ]
+    capabilities: ["Biomarker Analysis", "Protocol Architecture", "Program Design", "Data Strategy"]
   }
 ];
 ---
 
 <section id="team" class="py-20 md:py-32 bg-background">
   <div class="container px-4">
-    <!-- Section header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
-        Meet Your Team
-      </span>
-      <h2 class="text-3xl md:text-5xl font-bold mb-6">
-        Your Performance Team
-      </h2>
-      <p class="text-lg text-muted-foreground">
-        40+ years of combined experience in engineering elite human performance.
-      </p>
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">Meet Your Team</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Your Performance Team</h2>
+      <p class="text-lg text-muted-foreground">20+ years of combined experience architecting precision health and performance.</p>
     </div>
 
-    <!-- Team grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-      {teamMembers.map((member) => (
-        <div class="overflow-hidden bg-white rounded-lg border border-border group hover:border-primary/50 transition-colors shadow-sm">
-          <!-- Image -->
-          <div class="aspect-[4/5] overflow-hidden">
-            <Image
-              src={member.image}
-              alt={member.name}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
+    <div class="space-y-16 max-w-5xl mx-auto">
+      {team.map((member, index) => (
+        <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-start`}>
+          <div class="w-full md:w-2/5 flex-shrink-0">
+            <div class="aspect-[4/5] overflow-hidden rounded-lg">
+              <img src={member.image.src} alt={member.name} loading="lazy" width={member.image.width} height={member.image.height} class="w-full h-full object-cover" />
+            </div>
           </div>
-
-          <!-- Content -->
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-foreground">{member.name}</h3>
-            <p class="text-primary text-sm font-medium mb-4">{member.credentials}</p>
-
-            <div class="space-y-3">
-              <div>
-                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-2">Education</p>
-                <ul class="space-y-1">
-                  {member.education.map((item) => (
-                    <li class="text-sm text-muted-foreground">{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-2">Experience</p>
-                <ul class="space-y-1">
-                  {member.certifications.map((item) => (
-                    <li class="text-sm text-muted-foreground">{item}</li>
-                  ))}
-                </ul>
-              </div>
+          <div class="w-full md:w-3/5">
+            <h3 class="text-2xl md:text-3xl font-bold text-foreground mb-1">{member.name}</h3>
+            <p class="text-primary font-medium mb-6">{member.role}</p>
+            <div class="space-y-4 mb-6">
+              {member.bio.map((paragraph) => (
+                <p class="text-muted-foreground leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {member.capabilities.map((cap) => (
+                <span class="px-3 py-1.5 text-xs font-medium text-primary bg-primary/10 border border-primary/20 rounded-full">{cap}</span>
+              ))}
             </div>
           </div>
         </div>

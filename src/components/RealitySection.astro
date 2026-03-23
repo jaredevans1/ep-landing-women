@@ -1,0 +1,57 @@
+---
+const stats = [
+  { number: "88", unit: "%", label: "Metabolically Unhealthy", detail: "Nearly 9 in 10 American adults show markers of metabolic dysfunction, and most don't know it. Metabolic health controls how you store fat, produce energy, and regulate hormones." },
+  { number: "15", unit: "markers", label: "Standard Physical", detail: "A standard panel looks for overt dysfunction. If nothing is flagged, you're told you're fine. We analyze 55 biomarkers to find what standard panels miss." },
+  { number: "1", unit: "marker", label: "\"Thyroid Check\"", detail: "Most women get one thyroid marker checked. A full thyroid panel is 5 markers. That single number misses the patterns behind fatigue, weight gain, and brain fog." },
+  { number: "3-5", unit: "%", label: "Muscle Lost Per Decade", detail: "After 30, without intervention, sarcopenia and osteoporosis build silently. Training and nutrition are the most powerful tools you have to reverse the trajectory." },
+  { number: "6+", unit: "hormones", label: "Shifting Every Decade", detail: "Estrogen, testosterone, cortisol, FSH, LH, SHBG. They shift across every life stage. Most women are told \"it's just stress\" or \"it's your age.\" A full hormone panel reveals what's actually driving the symptoms." },
+  { number: "0", unit: "integration", label: "Fragmented Health", detail: "Doctor, trainer, nutritionist, maybe a prescription or two. None of them talking to each other. No system connecting the data to a single strategy built around you." },
+];
+
+const risks = ["Accelerated Aging", "Heart Disease", "Hormonal Decline", "Bone Density Loss", "Cognitive Decline", "Metabolic Dysfunction"];
+---
+
+<section class="py-16 md:py-28 relative overflow-hidden" style="background: linear-gradient(to bottom, hsl(261 27% 48% / 0.22), hsl(261 27% 48% / 0.10) 50%, hsl(261 27% 80% / 0.04) 80%, transparent);">
+  <!-- Ambient glows -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-primary/15 rounded-full blur-[180px]"></div>
+  <div class="container px-4 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">The Reality</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        "Normal" Is Not <span class="text-primary font-extrabold">Optimal</span>
+      </h2>
+      <p class="text-base sm:text-lg text-muted-foreground">
+        Most lab panels are designed to screen for disease. Ours are designed to reveal what's driving your energy, your body composition, and how you age. The gap between
+        "normal" ranges and <span class="text-foreground font-semibold">optimal health</span> is where results live.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-14">
+      {stats.map((stat) => (
+        <div class="relative p-6 rounded-lg bg-background border border-border hover:border-primary/30 transition-colors overflow-hidden group">
+          <div class="absolute top-0 left-0 w-1 h-full bg-primary/20 group-hover:bg-primary/60 transition-colors"></div>
+          <div class="flex items-baseline gap-1.5 mb-3">
+            <span class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary">{stat.number}</span>
+            <span class="text-sm font-medium text-muted-foreground">{stat.unit}</span>
+          </div>
+          <p class="text-sm font-semibold text-foreground mb-1.5">{stat.label}</p>
+          <p class="text-sm text-muted-foreground leading-relaxed">{stat.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-4xl mx-auto relative">
+      <!-- Maroon glow behind card -->
+      <div class="absolute -inset-3 bg-rose-800/20 rounded-2xl blur-xl"></div>
+      <div class="relative rounded-lg border-2 border-rose-800/50 bg-background px-4 py-6 sm:p-8 text-center shadow-lg">
+        <p class="text-xl sm:text-2xl font-bold text-rose-900 mb-2">These gaps compound.</p>
+        <p class="text-sm sm:text-base text-rose-800/70 mb-6">What starts as low energy and stubborn weight gain becomes something harder to reverse.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          {risks.map((risk) => (
+            <span class="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-full" style="color: hsl(330 60% 35%); background: hsl(330 50% 93%); border: 1px solid hsl(330 50% 72%);">{risk}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

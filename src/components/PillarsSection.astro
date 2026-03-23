@@ -2,65 +2,74 @@
 const pillars = [
   {
     title: "Biomarker Intelligence",
-    description: "See exactly what's happening inside your body. 160+ markers tested, 55 key biomarkers analyzed. No guesswork, just data that drives every decision.",
+    description: "55 key biomarkers analyzed across metabolic, hormonal, thyroid, cardiovascular, and inflammatory systems.\n\nWe connect the dots between markers that are typically reviewed in isolation, so nothing gets missed.",
     color: "#22C55E",
     icon: "beaker"
   },
   {
     title: "Nutrition Architecture",
-    description: "A flexible eating system that fits your travel schedule and lifestyle. No rigid meal plans - real strategies you can actually follow.",
+    description: "A flexible approach to eating that works with your life. Between work, kids, and everything else on your calendar, the last thing you need is a rigid meal plan.\n\nWe build strategies around what you already enjoy. Sustainable, doable, and built for your schedule.",
     color: "#F97316",
     icon: "utensils"
   },
   {
     title: "Training & Performance",
-    description: "Efficient workouts you can do anywhere. Programmed by coaches with 20+ years experience. No hours in the gym required.",
+    description: "Two to three targeted sessions per week. Designed to optimize your hormonal landscape, preserve bone density, and protect against age-related muscle loss.\n\nNo hours in the gym. No endless cardio. Every session is programmed around your goals and your life stage.",
     color: "#3B82F6",
     icon: "dumbbell"
   },
   {
     title: "Sleep & Recovery",
-    description: "Track HRV, sleep quality, and strain to know when to push and when to rest. Your wearable data syncs directly to your dashboard.",
+    description: "We track HRV, sleep quality, and strain levels to know when to push and when to rest.\n\nOver time, you learn to read your body's cues and make better decisions about your energy every day.",
     color: "#A855F7",
     icon: "moon"
   },
   {
     title: "Coaching & Accountability",
-    description: "Unlimited access to our team. We answer questions, we hold you accountable. Weekly check-ins and monthly scorecards.",
+    description: "Someone genuinely invested in your success. Someone who answers your questions thoroughly, holds you accountable without judgment, and cares about your goals as much as you do.\n\nWeekly check-ins and monthly scorecards keep you on track.",
     color: "#C8A65E",
     icon: "phone"
   },
   {
     title: "Data Integration",
-    description: "Everything connected. Your labs drive your nutrition, training, and recovery. Nothing siloed, every variable optimized.",
+    description: "Everything connected. Your labs and biometrics drive every protocol decision.\n\nAll of it available on your live dashboard, updated in real time.",
     color: "#06B6D4",
     icon: "database"
   }
 ];
 ---
 
-<section id="system" class="py-12 md:py-20 bg-card">
-  <div class="container px-4">
+<section id="system" class="py-12 md:py-20 bg-card relative overflow-hidden">
+  <!-- Ambient glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[120px]"></div>
+
+  <div class="container px-4 relative z-10">
     <!-- Section header -->
     <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-3 block">
         The System
       </span>
       <h2 class="text-3xl md:text-5xl font-bold mb-4">
-        The 6 Pillars of Executive Health
+        6 Pillars of Precision Health
       </h2>
       <p class="text-muted-foreground">
-        This is how we turn your data into results. A comprehensive system designed for busy executives who demand precision.
+        We analyze what's actually happening inside your body, then build a system around it.
+      </p>
+      <p class="text-muted-foreground mt-1">
+        One team. Nothing siloed.
       </p>
     </div>
 
     <!-- Pillars grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {pillars.map((pillar) => (
-        <div class="group p-6 rounded-2xl bg-background border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow">
+        <div class="group relative rounded-2xl bg-background border border-border hover:border-primary/40 transition-all duration-300 overflow-hidden border-l-4" style={`border-left-color: ${pillar.color}`}>
+          <!-- Hover glow -->
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={`background: radial-gradient(circle at 0% 50%, ${pillar.color}08 0%, transparent 70%)`}></div>
+          <div class="p-6 relative">
           <div
-            class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-            style={`background-color: ${pillar.color}20`}
+            class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border"
+            style={`background-color: ${pillar.color}15; border-color: ${pillar.color}30`}
           >
             {pillar.icon === "beaker" && (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={pillar.color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg>
@@ -82,7 +91,12 @@ const pillars = [
             )}
           </div>
           <h3 class="text-lg font-bold mb-2 text-foreground">{pillar.title}</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">{pillar.description}</p>
+          <div class="text-sm text-muted-foreground leading-relaxed">
+            {pillar.description.split('\n\n').map((paragraph) => (
+              <p class="mb-2 last:mb-0">{paragraph}</p>
+            ))}
+          </div>
+          </div>
         </div>
       ))}
     </div>

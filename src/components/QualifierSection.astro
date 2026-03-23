@@ -1,9 +1,17 @@
 ---
 const forYouItems = [
-  "You're a busy woman who's ready to prioritize your health",
-  "You're tired of fragmented solutions that don't talk to each other",
-  "You want to understand what's actually happening inside your body",
-  "You're looking for a sustainable system, not a quick fix"
+  "You've been told \"it's stress\" or \"it's your age\" and you know that's not the full answer",
+  "You're a professional woman who knows something is off and you're done guessing",
+  "You're tired of fragmented solutions. Your doctor, your trainer, your prescriptions. None of it coordinated. And you're not sure half of it is even necessary.",
+  "You want to know what's actually happening inside your body and you're ready to follow a system"
+];
+
+const notForYouItems = [
+  "You want a meal plan and a workout PDF",
+  "You're looking for a quick fix or a 30-day program",
+  "You're not ready to invest in or execute on protocols",
+  "You think \"normal\" lab ranges mean you're fine",
+  "You're satisfied with the system you're using to manage your health and aging"
 ];
 ---
 
@@ -12,29 +20,48 @@ const forYouItems = [
     <!-- Section header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
-        Is This Right For You?
+        The Right Fit
       </span>
-      <h2 class="text-3xl md:text-5xl font-bold mb-6">
-        Built for Women Ready to Transform
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">
+        This System Isn't For Everyone
       </h2>
       <p class="text-lg text-muted-foreground">
-        Our system works best for women who are ready to commit to a data-driven approach.
+        Our system works best for women who are ready to commit to a holistic data-driven approach.
       </p>
     </div>
 
-    <!-- Single column - positive framing only -->
-    <div class="max-w-2xl mx-auto">
-      <div class="p-8 rounded-2xl bg-primary/5 border border-primary/20">
+    <!-- Two column layout -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <!-- For You card -->
+      <div class="p-8 rounded-2xl bg-green-50/60 border-2 border-green-300 shadow-[0_0_30px_rgba(34,197,94,0.1)]">
         <h3 class="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
-          This System Is For You If:
+          This Is For You If:
         </h3>
         <ul class="space-y-4">
           {forYouItems.map((item) => (
             <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="text-muted-foreground">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Not For You card -->
+      <div class="p-8 rounded-2xl bg-red-50/60 border-2 border-red-300 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+        <h3 class="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </div>
+          This Is Not For You If:
+        </h3>
+        <ul class="space-y-4">
+          {notForYouItems.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400 flex-shrink-0 mt-0.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
               <span class="text-muted-foreground">{item}</span>
             </li>
           ))}

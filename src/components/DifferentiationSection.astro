@@ -1,0 +1,47 @@
+---
+const bullets = [
+  "Biomarker-guided decision making, not guesswork",
+  "Training that adapts to your recovery, your stress, and your schedule",
+  "Nutrition architecture built around your life, not against it",
+  "Hormonal health tracked and optimized across every life stage",
+  "Long-horizon strategy for sustained energy and longevity",
+];
+---
+
+<section class="pt-12 pb-20 md:pt-20 md:pb-32 bg-background relative overflow-hidden">
+  <div class="absolute top-1/2 right-0 w-[400px] h-[400px] bg-primary/4 rounded-full blur-[120px]"></div>
+
+  <div class="container px-4 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">The Difference</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+        Your doctor, trainer, and nutritionist <span class="text-gradient">have never been in the same room.</span>
+      </h2>
+
+      <div class="space-y-6 text-base sm:text-lg text-muted-foreground mb-10 max-w-3xl">
+        <p>
+          You're taking supplements you heard about on a podcast. You started strength training because someone said it matters after 40. You're putting in effort but the stubborn belly fat won't budge, and you have no way of knowing if what you're doing is right for your body.
+        </p>
+        <p>
+          Figuring this out on your own doesn't have to be another thing on your plate.
+        </p>
+        <p class="text-foreground font-medium">
+          You deserve real answers, lasting results, and a body you actually feel confident in.
+        </p>
+      </div>
+
+      <ul class="space-y-4 mb-12">
+        {bullets.map((bullet) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-base sm:text-lg text-foreground">{bullet}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="text-base sm:text-lg text-muted-foreground border-l-2 border-primary/50 pl-5">
+        This is precision health optimization for women who refuse to settle for "normal."
+      </p>
+    </div>
+  </div>
+</section>
