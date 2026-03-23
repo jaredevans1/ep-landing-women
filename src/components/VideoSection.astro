@@ -33,5 +33,33 @@
   </div>
 </section>
 
-<script is:inline src="https://fast.wistia.com/player.js" async></script>
-<script is:inline src="https://fast.wistia.com/embed/tbt45z0ewh.js" async type="module"></script>
+<script is:inline>
+  // Lazy-load Wistia scripts only when video section is near viewport
+  (function() {
+    var loaded = false;
+    function loadWistia() {
+      if (loaded) return;
+      loaded = true;
+      var s1 = document.createElement('script');
+      s1.src = 'https://fast.wistia.com/player.js';
+      s1.async = true;
+      document.head.appendChild(s1);
+      var s2 = document.createElement('script');
+      s2.src = 'https://fast.wistia.com/embed/tbt45z0ewh.js';
+      s2.async = true;
+      s2.type = 'module';
+      document.head.appendChild(s2);
+    }
+    if ('IntersectionObserver' in window) {
+      var el = document.querySelector('wistia-player');
+      if (el) {
+        var obs = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) { loadWistia(); obs.disconnect(); }
+        }, { rootMargin: '200px' });
+        obs.observe(el);
+      }
+    } else {
+      loadWistia();
+    }
+  })();
+</script>

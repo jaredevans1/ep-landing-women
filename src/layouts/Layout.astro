@@ -21,9 +21,11 @@ const {
     <meta name="description" content={description} />
     <meta name="author" content="Evans Performance" />
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#6E5B9A" />
 
     <link rel="preconnect" href="https://fast.wistia.com" crossorigin />
     <link rel="dns-prefetch" href="https://fast.wistia.com" />
+    <link rel="dns-prefetch" href="https://snap.licdn.com" />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -40,20 +42,22 @@ const {
       <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6958498&fmt=gif" />
     </noscript>
     <script is:inline>
-      _linkedin_partner_id = "6958498";
-      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script>
-    <script is:inline>
-      (function(l) {
-        if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-        window.lintrk.q=[]}
+      // Defer LinkedIn analytics until after page is interactive
+      function loadLinkedIn() {
+        _linkedin_partner_id = "6958498";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
         var s = document.getElementsByTagName("script")[0];
         var b = document.createElement("script");
-        b.type = "text/javascript";b.async = true;
+        b.type = "text/javascript"; b.async = true;
         b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
         s.parentNode.insertBefore(b, s);
-      })(window.lintrk);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadLinkedIn);
+      } else {
+        setTimeout(loadLinkedIn, 3000);
+      }
     </script>
   </body>
 </html>

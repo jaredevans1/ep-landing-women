@@ -90,7 +90,7 @@ const navLinks = [
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
 
-  // Scroll effect
+  // Scroll effect (passive for performance)
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
       header?.classList.add('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-border', 'shadow-lg');
@@ -99,7 +99,7 @@ const navLinks = [
       header?.classList.remove('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-border', 'shadow-lg');
       header?.classList.add('bg-transparent');
     }
-  });
+  }, { passive: true });
 
   // Mobile menu toggle
   toggle?.addEventListener('click', () => {

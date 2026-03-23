@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import lindaHeadshot from "@/assets/headshots/linda.jpeg";
 import jeffHeadshot from "@/assets/headshots/jeff.jpeg";
 import derekHeadshot from "@/assets/headshots/derek.jpeg";
@@ -127,7 +128,7 @@ const starIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 
 <section class="py-20 md:py-32 bg-[#13101d] relative overflow-hidden">
   <!-- Ambient glow -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[120px]"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[60px]"></div>
 
   <div class="container px-4 relative z-10">
     <!-- Section header -->
@@ -177,9 +178,13 @@ const starIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             <!-- Author -->
             <div class="flex items-center gap-3">
               {t.headshot ? (
-                <img
-                  src={t.headshot.src}
+                <Image
+                  src={t.headshot}
                   alt={t.name}
+                  width={40}
+                  height={40}
+                  format="webp"
+                  quality={75}
                   class="w-10 h-10 rounded-full object-cover border border-primary/30"
                   loading="lazy"
                 />
